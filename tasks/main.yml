@@ -1,0 +1,15 @@
+---
+- name: 'Install tmux'
+  become: yes
+  become_user: root
+  package:
+    name: tmux
+    state: present
+- name: 'Configure tmux'
+  lineinfile:
+    path: '~/.tmux.conf'
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    create: yes
+  with_items: "{{ tmux_configuration }}"
+  when: tmux_configuration != []

@@ -1,0 +1,6 @@
+---
+#tmux_configuration:
+#  - { regexp: '^set -g mode-mouse', line: "set -g mode-mouse on" }
+#  - { regexp: '^set -g mouse-resize-pane', line: "set -g mouse-resize-pane on" }
+#  - { regexp: '^set -g mouse-select-pane', line: "set -g mouse-select-pane on" }
+tmux_configuration: []
