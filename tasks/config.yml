@@ -1,0 +1,9 @@
+---
+- name: 'Configure tmux'
+  lineinfile:
+    path: '~/.tmux.conf'
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    create: yes
+  with_items: "{{ tmux_configuration }}"
+  when: tmux_configuration != []
